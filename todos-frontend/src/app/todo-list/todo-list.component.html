@@ -1,0 +1,23 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let t of todos">
+            <td>{{ t.id }}</td>
+            <td>{{ t.description }}</td>
+            <td>{{ t.date }}</td>
+            <button type="button" (click)="updateOnClick(t.id)" class="btn btn-info shift">Update</button>
+            <button type="button" (click)="deleteOnClick(t.id)" class="btn btn-info shift">Delete</button>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" (click)="addOnClick()" class="btn btn-info">Add Todo</button>
+    </div>
+  </div>

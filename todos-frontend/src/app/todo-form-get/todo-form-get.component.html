@@ -1,0 +1,35 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #todoForm="ngForm">
+        <div class="form-group">
+          <label for="Id">Id: </label>
+          <input type="text" [(ngModel)]="todo_id" 
+            class="form-control" 
+            name = "todo_id"
+            id="todo_id" 
+            required #id="ngModel">
+        </div>
+        <button type="submit" [disabled]="!todoForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+      <div *ngIf="todo != null">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Description</th>
+                <th scope="col">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ todo.id }}</td>
+                <td>{{ todo.description }}</td>
+                <td>{{ todo.date }}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+  

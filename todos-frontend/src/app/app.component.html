@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark my-5">
+        <div class="card-body">
+          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+          <ul class="text-center py-3">
+            <li class="tab">
+              <a routerLink="/get-all-todos" routerLinkActive="active">Get All Todos</a>
+            </li>
+            <li class="tab">
+              <a routerLink="/get-todo" routerLinkActive="active">Get Todo By Id</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
